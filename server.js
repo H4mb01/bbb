@@ -57,7 +57,7 @@ async function db() {
     try {
         await client.connect();
 
-        createListing(client, {
+        await createListing(client, {
             name: "Lovely Loft",
             summary: "blablabla",
             bedrooms: 1,
