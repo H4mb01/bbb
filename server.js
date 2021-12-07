@@ -46,13 +46,13 @@ function authenticateToken(req, res, next) {
 
 /************************/
 /** USER AUTHENTICATION */
-/********************** */
+/************************/
 
 //Verbindung zur Datenbank
 
 const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 async function db() {
-    const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
         await client.connect();
@@ -77,11 +77,6 @@ async function listDatabases(client) {
     databasesList.databases.forEach(database => console.log(database.name))
 }
 
-async function createListing(client, newListing) {
-    const result = await client.db("sample_airbnb").collection("listingAndReviews").insertOne(newListing)
-
-    console.log(`New listing created with the following id: ${result.insertedId}`)
-}
 
 db().catch(console.error)
 
@@ -119,7 +114,7 @@ app.post('/register', async (req, res) => {
             const user = {name: req.body.name, password: hashedPassword}
             users.push(user)
 
-            //addUserToDB(user)
+            addUserToDB(user)
             res.status(201).send()
         } catch {
             res.status(500).send()
