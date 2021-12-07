@@ -78,7 +78,7 @@ async function listDatabases(client) {
 }
 
 async function createListing(client, newListing) {
-    const result = await client.db("ample_airbnb").collection("listingAndReviews").insertOne(newListing)
+    const result = await client.db("sample_airbnb").collection("listingAndReviews").insertOne(newListing)
 
     console.log(`New listing created with the following id: ${result.insertedId}`)
 }
