@@ -6,6 +6,8 @@ const app = express()
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 
+const port = process.env.PORT || 80
+
 app.use(cors())
 app.use(express.json())
 
@@ -163,4 +165,4 @@ function generateAccessToken(user) {
 
 
 
-app.listen(3000)
+app.listen(port)
