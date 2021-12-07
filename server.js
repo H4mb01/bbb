@@ -49,10 +49,9 @@ function authenticateToken(req, res, next) {
 //Verbindung zur Datenbank
 
 /** derzeit nicht funtional */
-/*
 const { MongoClient } = require('mongodb');
 async function db() {
-    const uri = "mongodb+srv://wdbAdmin:admindbpw@wuppercluster.5yooi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
         await client.connect();
@@ -73,7 +72,6 @@ async function listDatabases(client) {
 }
 
 db().catch(console.error)
-*/
 
 
 const users = []
