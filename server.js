@@ -57,12 +57,7 @@ async function db() {
     try {
         await client.connect();
 
-        await createListing(client, {
-            name: "Lovely Loft",
-            summary: "blablabla",
-            bedrooms: 1,
-            bathrooms: 1
-        })
+        await readAllUsersFromDB(client)
     } catch(e){
         console.error(e)
     } finally {
@@ -101,6 +96,12 @@ async function addUserToDB(user){
     } finally {
         client.close()
     }
+}
+
+async function readAllUsersFromDB(client) {
+    const result = await client.db("Beobachtungsboegen").collection("users").find({})
+
+    console.log(result)
 }
 
 // Neuen User anlegen
