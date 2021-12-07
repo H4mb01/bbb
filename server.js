@@ -140,8 +140,7 @@ app.post('/users/login', async (req, res) => {
             const accessToken = generateAccessToken(tokenUser) 
             const refreshToken = jwt.sign(tokenUser, process.env.REFRESH_TOKEN_SECRET)
             refreshTokens.push(refreshToken)
-            res.json({accessToken: accessToken, refreshToken: refreshToken})
-            res.status(200).send("Success")
+            res.status(200).json({accessToken: accessToken, refreshToken: refreshToken})
         } else {
             res.status(401).send("Not Allowed")
         }
