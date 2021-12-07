@@ -50,7 +50,6 @@ function authenticateToken(req, res, next) {
 
 //Verbindung zur Datenbank
 
-/** derzeit nicht funtional */
 const { MongoClient } = require('mongodb');
 async function db() {
     const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -58,7 +57,12 @@ async function db() {
     try {
         await client.connect();
 
-        await listDatabases(client)
+        createListing(client, {
+            name: "Lovely Loft",
+            summary: "blablabla",
+            bedrooms: 1,
+            bathrooms: 1
+        })
     } catch(e){
         console.error(e)
     } finally {
@@ -71,6 +75,12 @@ async function listDatabases(client) {
     const databasesList = await client.db().admin().listDatabases()
     console.log("Databases:")
     databasesList.databases.forEach(database => console.log(database.name))
+}
+
+async function createListing(client, newListing) {
+    const result = await client.db("ample_airbnb").collection("listingAndReviews").insertOne(newListing)
+
+    console.log(`New listing created with the following id: ${result.insertedId}`)
 }
 
 db().catch(console.error)
