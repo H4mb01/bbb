@@ -101,7 +101,7 @@ async function addUserToDB(user){
 async function readAllUsersFromDB(client) {
     const result = await client.db("Beobachtungsboegen").collection("users").find({})
 
-    console.log(result)
+    console.log("result:", result)
 }
 
 // Neuen User anlegen
