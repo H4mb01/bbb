@@ -76,7 +76,7 @@ async function listDatabases(client) {
 db().catch(console.error)
 
 
-const users = []
+let users = []
 
 let refreshTokens = []
 
