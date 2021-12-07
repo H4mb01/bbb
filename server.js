@@ -24,6 +24,10 @@ const posts = [
 ]
 
 
+app.get("/auth", authenticateToken, (req, res) => {
+    res.json({auth: true})
+})
+
 //Beispiel für Anfrage, bei der ein user nur das geschickt bekommt, 
 //wozu er Berechtigung hat
 app.get('/posts', authenticateToken, (req, res) => {
