@@ -27,6 +27,24 @@ const posts = [
 ]
 
 
+// Daten eines Kindes bekommen
+app.get("/child/:name", authenticateToken, async (req, res) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const child = await findOneChildByName(client, req.params.name, req.user.name)
+    res.json(child)
+})
+async function findOneChildByName(client, nameOfChild, username) {
+    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ Vorname: nameOfChild, creator: username});
+    if (result) {
+        console.log(`Found a listing in the collection with the name '${nameOfChild}':`);
+        return result;
+    } else {
+        console.log(`No listings found with the name '${nameOfChild}'`);
+    }
+}
+
+
+
 // neues Kind anlegen
 app.post("/create-child", authenticateToken, async (req, res) => {
     const child = {
@@ -56,6 +74,9 @@ async function createChild(child) {
         await client.close();
     }
 }
+
+
+
 
 // Beobachtung updaten 
 /*
@@ -113,11 +134,6 @@ async function db() {
     }
 }
 
-async function listDatabases(client) {
-    const databasesList = await client.db().admin().listDatabases()
-    console.log("Databases:")
-    databasesList.databases.forEach(database => console.log(database.name))
-}
 
 
 db().catch(console.error)
