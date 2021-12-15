@@ -28,7 +28,7 @@ const posts = [
 
 
 // neues Kind anlegen
-app.post("/create-child", authenticateToken, (req, res) => {
+app.post("/create-child", authenticateToken, async (req, res) => {
     const child = {
         creator: req.user.name,
         read: [req.user.name],
