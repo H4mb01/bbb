@@ -8,6 +8,9 @@ const jwt = require("jsonwebtoken")
 
 const port = process.env.PORT || 80
 
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
 app.use(cors())
 app.use(express.json())
 
@@ -23,6 +26,51 @@ const posts = [
     }
 ]
 
+
+// neues Kind anlegen
+app.post("/create-child", authenticateToken, (req, res) => {
+    const child = {
+        creator: req.user.name,
+        read: [req.user.name],
+        write: [req.user.name],
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        birthDate: req.body.birthDate,
+        observations: req.body.observations
+    }
+    try {
+        await createChild(child)
+        res.sendStatus(201)
+    } catch {
+        res.sendStatus(500)
+    }
+})
+async function createChild(child) {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+
+        await createListing(client, "children", child)
+    } catch(e){
+        console.error(e)
+    } finally {
+        await client.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/************************/
+/** USER AUTHENTICATION */
+/************************/
 
 app.get("/auth", authenticateToken, (req, res) => {
     res.json({auth: true})
@@ -48,14 +96,7 @@ function authenticateToken(req, res, next) {
 }
 
 
-/************************/
-/** USER AUTHENTICATION */
-/************************/
-
 //Verbindung zur Datenbank
-
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 async function db() {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
@@ -67,7 +108,6 @@ async function db() {
     } finally {
         await client.close();
     }
-
 }
 
 async function listDatabases(client) {
@@ -84,8 +124,8 @@ let users = []
 
 let refreshTokens = []
 
-async function createListing(client, newListing){
-    const result = await client.db("Beobachtungsboegen").collection("users").insertOne(newListing)
+async function createListing(client, collection, newListing){
+    const result = await client.db("Beobachtungsboegen").collection(collection).insertOne(newListing)
     
     console.log(`New listing created with the following id: ${result.insertedId}`)
 }
@@ -94,7 +134,7 @@ async function addUserToDB(user){
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
         await client.connect()
-        await createListing(client, user)
+        await createListing(client, "users", user)
     } catch (e) {
         console.log(e)
     } finally {
@@ -156,7 +196,7 @@ app.post('/users/login', async (req, res) => {
     }
 })
 
-// token refreshen
+// token refreshen (bekommt refreshToken, sendet neuen accessToken)
 app.post("/token", (req, res) => {
     const refreshToken = req.body.token
     if (refreshToken == null) return refreshTokens.sendStatus(401)
