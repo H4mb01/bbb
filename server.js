@@ -35,8 +35,7 @@ app.post("/create-child", authenticateToken, async (req, res) => {
         write: [req.user.name],
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        birthDate: req.body.birthDate,
-        observations: req.body.observations
+        birthDate: req.body.birthDate
     }
     try {
         await createChild(child)
@@ -58,8 +57,12 @@ async function createChild(child) {
     }
 }
 
+// Beobachtung updaten 
+/*
+app.post("/observation", authenticateToken, async (req, res) => {
 
-
+}) 
+*/
 
 
 

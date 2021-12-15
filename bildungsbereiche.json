@@ -1,0 +1,772 @@
+{
+    "Bildungsbereiche": {
+        "Hören, Sehen, Verstehen": [
+            {
+                "id": 1,
+                "beschreibung": "Blickt ins Gesicht"
+            },
+            {
+                "id": 2,
+                "beschreibung": "Erschreckt bei lauten Geräuschen"
+            },
+            {
+                "id": 3,
+                "beschreibung": ""
+            },
+            {
+                "id": 4,
+                "beschreibung":""
+            },
+            {
+                "id": 5,
+                "beschreibung":""
+            },
+            {
+                "id": 6,
+                "beschreibung":""
+            },
+            {
+                "id": 7,
+                "beschreibung":""
+            },
+            {
+                "id": 8,
+                "beschreibung":""
+            },
+            {
+                "id": 9,
+                "beschreibung":""
+            },
+            {
+                "id": 10,
+                "beschreibung":""
+            },
+            {
+                "id": 11,
+                "beschreibung":""
+            },
+            {
+                "id": 12,
+                "beschreibung":""
+            },
+            {
+                "id": 13,
+                "beschreibung":""
+            },
+            {
+                "id": 14,
+                "beschreibung":""
+            },
+            {
+                "id": 15,
+                "beschreibung":""
+            },
+            {
+                "id": 16,
+                "beschreibung":""
+            },
+            {
+                "id": 17,
+                "beschreibung":""
+            },
+            {
+                "id": 18,
+                "beschreibung":""
+            },
+            {
+                "id": 19,
+                "beschreibung":""
+            },
+            {
+                "id": 20,
+                "beschreibung":""
+            },
+            {
+                "id": 21,
+                "beschreibung":""
+            },
+            {
+                "id": 22,
+                "beschreibung":""
+            },
+            {
+                "id": 23,
+                "beschreibung":""
+            },
+            {
+                "id": 24,
+                "beschreibung":""
+            },
+            {
+                "id": 25,
+                "beschreibung":""
+            }
+        ],
+        "Sprechen": [
+            {
+                "id": 26,
+                "beschreibung":""
+            },
+            {
+                "id": 27,
+                "beschreibung":""
+            },
+            {
+                "id": 28,
+                "beschreibung":""
+            },
+            {
+                "id": 29,
+                "beschreibung":""
+            },
+            {
+                "id": 30,
+                "beschreibung":""
+            },
+            {
+                "id": 31,
+                "beschreibung":""
+            },
+            {
+                "id": 32,
+                "beschreibung":""
+            },
+            {
+                "id": 33,
+                "beschreibung":""
+            },
+            {
+                "id": 34,
+                "beschreibung":""
+            },
+            {
+                "id": 35,
+                "beschreibung":""
+            },
+            {
+                "id": 36,
+                "beschreibung":""
+            },
+            {
+                "id": 37,
+                "beschreibung":""
+            },
+            {
+                "id": 38,
+                "beschreibung":""
+            },
+            {
+                "id": 39,
+                "beschreibung":""
+            },
+            {
+                "id": 40,
+                "beschreibung":""
+            },
+            {
+                "id": 41,
+                "beschreibung":""
+            },
+            {
+                "id": 42,
+                "beschreibung":""
+            },
+            {
+                "id": 43,
+                "beschreibung":""
+            },
+            {
+                "id": 44,
+                "beschreibung":""
+            },
+            {
+                "id": 45,
+                "beschreibung":""
+            },
+            {
+                "id": 46,
+                "beschreibung":""
+            },
+            {
+                "id": 47,
+                "beschreibung":""
+            },
+            {
+                "id": 48,
+                "beschreibung":""
+            },
+            {
+                "id": 49,
+                "beschreibung":""
+            },
+            {
+                "id": 50,
+                "beschreibung":""
+            },
+            {
+                "id": 51,
+                "beschreibung":""
+            },
+            {
+                "id": 52,
+                "beschreibung":""
+            },
+            {
+                "id": 53,
+                "beschreibung":""
+            },
+            {
+                "id": 54,
+                "beschreibung":""
+            }
+        ],
+        "Bewegung, Geschicklichkeit": [
+            {
+                "id": 55,
+                "beschreibung":""
+            },
+            {
+                "id": 56,
+                "beschreibung":""
+            },
+            {
+                "id": 57,
+                "beschreibung":""
+            },
+            {
+                "id": 58,
+                "beschreibung":""
+            },
+            {
+                "id": 59,
+                "beschreibung":""
+            },
+            {
+                "id": 60,
+                "beschreibung":""
+            },
+            {
+                "id": 61,
+                "beschreibung":""
+            },
+            {
+                "id": 62,
+                "beschreibung":""
+            },
+            {
+                "id": 63,
+                "beschreibung":""
+            },
+            {
+                "id": 64,
+                "beschreibung":""
+            },
+            {
+                "id": 65,
+                "beschreibung":""
+            },
+            {
+                "id": 66,
+                "beschreibung":""
+            },
+            {
+                "id": 67,
+                "beschreibung":""
+            },
+            {
+                "id": 68,
+                "beschreibung":""
+            },
+            {
+                "id": 69,
+                "beschreibung":""
+            },
+            {
+                "id": 70,
+                "beschreibung":""
+            },
+            {
+                "id": 71,
+                "beschreibung":""
+            },
+            {
+                "id": 72,
+                "beschreibung":""
+            },
+            {
+                "id": 73,
+                "beschreibung":""
+            },
+            {
+                "id": 74,
+                "beschreibung":""
+            },
+            {
+                "id": 75,
+                "beschreibung":""
+            },
+            {
+                "id": 76,
+                "beschreibung":""
+            },
+            {
+                "id": 77,
+                "beschreibung":""
+            },
+            {
+                "id": 78,
+                "beschreibung":""
+            },
+            {
+                "id": 79,
+                "beschreibung":""
+            },
+            {
+                "id": 80,
+                "beschreibung":""
+            },
+            {
+                "id": 81,
+                "beschreibung":""
+            },
+            {
+                "id": 82,
+                "beschreibung":""
+            },
+            {
+                "id": 83,
+                "beschreibung":""
+            },
+            {
+                "id": 84,
+                "beschreibung":""
+            },
+            {
+                "id": 85,
+                "beschreibung":""
+            },
+            {
+                "id": 86,
+                "beschreibung":""
+            }
+        ],
+        "Körperkontrolle": [
+            {
+                "id": 87,
+                "beschreibung":""
+            },
+            {
+                "id": 88,
+                "beschreibung":""
+            },
+            {
+                "id": 89,
+                "beschreibung":""
+            },
+            {
+                "id": 90,
+                "beschreibung":""
+            },
+            {
+                "id": 91,
+                "beschreibung":""
+            },
+            {
+                "id": 92,
+                "beschreibung":""
+            },
+            {
+                "id": 93,
+                "beschreibung":""
+            },
+            {
+                "id": 94,
+                "beschreibung":""
+            },
+            {
+                "id": 95,
+                "beschreibung":""
+            },
+            {
+                "id": 96,
+                "beschreibung":""
+            },
+            {
+                "id": 97,
+                "beschreibung":""
+            },
+            {
+                "id": 98,
+                "beschreibung":""
+            },
+            {
+                "id": 99,
+                "beschreibung":""
+            },
+            {
+                "id": 100,
+                "beschreibung":""
+            },
+            {
+                "id": 101,
+                "beschreibung":""
+            },
+            {
+                "id": 102,
+                "beschreibung":""
+            },
+            {
+                "id": 103,
+                "beschreibung":""
+            },
+            {
+                "id": 104,
+                "beschreibung":""
+            },
+            {
+                "id": 105,
+                "beschreibung":""
+            },
+            {
+                "id": 106,
+                "beschreibung":""
+            },
+            {
+                "id": 107,
+                "beschreibung":""
+            },
+            {
+                "id": 108,
+                "beschreibung":""
+            },
+            {
+                "id": 109,
+                "beschreibung":""
+            },
+            {
+                "id": 110,
+                "beschreibung":""
+            },
+            {
+                "id": 111,
+                "beschreibung":""
+            },
+            {
+                "id": 112,
+                "beschreibung":""
+            }
+        ],
+        "Emotionalität, Soziales Miteinander": [
+            {
+                "id": 113,
+                "beschreibung":""
+            },
+            {
+                "id": 114,
+                "beschreibung":""
+            },
+            {
+                "id": 115,
+                "beschreibung":""
+            },
+            {
+                "id": 116,
+                "beschreibung":""
+            },
+            {
+                "id": 117,
+                "beschreibung":""
+            },
+            {
+                "id": 118,
+                "beschreibung":""
+            },
+            {
+                "id": 119,
+                "beschreibung":""
+            },
+            {
+                "id": 120,
+                "beschreibung":""
+            },
+            {
+                "id": 121,
+                "beschreibung":""
+            },
+            {
+                "id": 122,
+                "beschreibung":""
+            },
+            {
+                "id": 123,
+                "beschreibung":""
+            },
+            {
+                "id": 124,
+                "beschreibung":""
+            },
+            {
+                "id": 125,
+                "beschreibung":""
+            },
+            {
+                "id": 126,
+                "beschreibung":""
+            },
+            {
+                "id": 127,
+                "beschreibung":""
+            },
+            {
+                "id": 128,
+                "beschreibung":""
+            },
+            {
+                "id": 129,
+                "beschreibung":""
+            },
+            {
+                "id": 130,
+                "beschreibung":""
+            },
+            {
+                "id": 131,
+                "beschreibung":""
+            },
+            {
+                "id": 132,
+                "beschreibung":""
+            },
+            {
+                "id": 133,
+                "beschreibung":""
+            },
+            {
+                "id": 134,
+                "beschreibung":""
+            },
+            {
+                "id": 135,
+                "beschreibung":""
+            },
+            {
+                "id": 136,
+                "beschreibung":""
+            },
+            {
+                "id": 137,
+                "beschreibung":""
+            },
+            {
+                "id": 138,
+                "beschreibung":""
+            },
+            {
+                "id": 139,
+                "beschreibung":""
+            },
+            {
+                "id": 140,
+                "beschreibung":""
+            },
+            {
+                "id": 141,
+                "beschreibung":""
+            },
+            {
+                "id": 142,
+                "beschreibung":""
+            },
+            {
+                "id": 143,
+                "beschreibung":""
+            },
+            {
+                "id": 144,
+                "beschreibung":""
+            },
+            {
+                "id": 145,
+                "beschreibung":""
+            },
+            {
+                "id": 146,
+                "beschreibung":""
+            },
+            {
+                "id": 147,
+                "beschreibung":""
+            },
+            {
+                "id": 148,
+                "beschreibung":""
+            },
+            {
+                "id": 149,
+                "beschreibung":""
+            },
+            {
+                "id": 150,
+                "beschreibung":""
+            },
+            {
+                "id": 151,
+                "beschreibung":""
+            },
+            {
+                "id": 152,
+                "beschreibung":""
+            },
+            {
+                "id": 153,
+                "beschreibung":""
+            },
+            {
+                "id": 154,
+                "beschreibung":""
+            },
+            {
+                "id": 155,
+                "beschreibung":""
+            },
+            {
+                "id": 156,
+                "beschreibung":""
+            },
+            {
+                "id": 157,
+                "beschreibung":""
+            },
+            {
+                "id": 158,
+                "beschreibung":""
+            }
+        ],
+        "Denken": [
+            {
+                "id": 159,
+                "beschreibung":""
+            },
+            {
+                "id": 160,
+                "beschreibung":""
+            },
+            {
+                "id": 161,
+                "beschreibung":""
+            },
+            {
+                "id": 162,
+                "beschreibung":""
+            },
+            {
+                "id": 163,
+                "beschreibung":""
+            },
+            {
+                "id": 164,
+                "beschreibung":""
+            },
+            {
+                "id": 165,
+                "beschreibung":""
+            },
+            {
+                "id": 166,
+                "beschreibung":""
+            },
+            {
+                "id": 167,
+                "beschreibung":""
+            },
+            {
+                "id": 168,
+                "beschreibung":""
+            },
+            {
+                "id": 169,
+                "beschreibung":""
+            },
+            {
+                "id": 170,
+                "beschreibung":""
+            },
+            {
+                "id": 171,
+                "beschreibung":""
+            },
+            {
+                "id": 172,
+                "beschreibung":""
+            },
+            {
+                "id": 173,
+                "beschreibung":""
+            },
+            {
+                "id": 174,
+                "beschreibung":""
+            },
+            {
+                "id": 175,
+                "beschreibung":""
+            },
+            {
+                "id": 176,
+                "beschreibung":""
+            },
+            {
+                "id": 177,
+                "beschreibung":""
+            },
+            {
+                "id": 178,
+                "beschreibung":""
+            },
+            {
+                "id": 179,
+                "beschreibung":""
+            },
+            {
+                "id": 180,
+                "beschreibung":""
+            },
+            {
+                "id": 181,
+                "beschreibung":""
+            },
+            {
+                "id": 182,
+                "beschreibung":""
+            },
+            {
+                "id": 183,
+                "beschreibung":""
+            },
+            {
+                "id": 184,
+                "beschreibung":""
+            },
+            {
+                "id": 185,
+                "beschreibung":""
+            },
+            {
+                "id": 186,
+                "beschreibung":""
+            },
+            {
+                "id": 187,
+                "beschreibung":""
+            },
+            {
+                "id": 188,
+                "beschreibung":""
+            },
+            {
+                "id": 189,
+                "beschreibung":""
+            }
+        ]
+    }
+}
