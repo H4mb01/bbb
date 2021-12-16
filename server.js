@@ -43,6 +43,21 @@ async function findOneChildByName(client, nameOfChild, username) {
     }
 }
 
+// Namen aller Kinder bekommen
+app.get("/children", authenticateToken, async (req, res) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const children = await findAllChildNames(client, req.user.name)
+    res.json(children)
+})
+async function findAllChildNames(client, username) {
+    const result = await client.db("Beobachtungsboegen").collection("children").find({creator: username});
+    if (result) {
+        console.log("result:",result)
+        return result;
+    } else {
+        console.log(`No children found of ${username}'`);
+    }
+}
 
 
 // neues Kind anlegen
