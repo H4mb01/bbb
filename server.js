@@ -50,6 +50,7 @@ app.get("/children", authenticateToken, async (req, res) => {
         await client.connect()
         
         const children = await findAllChilds(client, req.user.name)
+        console.log(children)
         res.json(children)
     } catch (e) {
         console.log(e)
