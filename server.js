@@ -63,7 +63,7 @@ async function findAllChilds(client, username) {
     const result = await client.db("Beobachtungsboegen").collection("children").find({"creator": "laui"});
     if (result) {
         console.log("result:",result)
-        return result;
+        return await result.toArray();
     } else {
         console.log(`No children found of ${username}'`);
     }
