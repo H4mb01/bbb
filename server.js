@@ -43,13 +43,13 @@ async function findOneChildByName(client, nameOfChild, username) {
     }
 }
 
-// Namen aller Kinder bekommen
+// Daten aller Kinder bekommen
 app.get("/children", authenticateToken, async (req, res) => {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try{
         await client.connect()
         
-        const children = await findAllChildNames(client, req.user.name)
+        const children = await findAllChilds(client, req.user.name)
         res.json(children)
     } catch (e) {
         console.log(e)
@@ -58,7 +58,7 @@ app.get("/children", authenticateToken, async (req, res) => {
         await client.close()
     }
 })
-async function findAllChildNames(client, username) {
+async function findAllChilds(client, username) {
     const result = await client.db("Beobachtungsboegen").collection("children").find({creator: username});
     if (result) {
         console.log("result:",result)
@@ -134,7 +134,7 @@ app.get('/posts', authenticateToken, (req, res) => {
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
-    if (token == null) return res.sendStatus(401)
+    if (token === null) return res.sendStatus(401)
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
         if (err) return res.sendStatus(403)
