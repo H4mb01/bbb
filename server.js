@@ -121,7 +121,7 @@ app.post("/observation", authenticateToken, async (req, res) => {
 /************************/
 
 app.get("/auth", authenticateToken, (req, res) => {
-    res.json({auth: true})
+    res.status(200).json({auth: true})
 })
 
 //Beispiel für Anfrage, bei der ein user nur das geschickt bekommt, 
