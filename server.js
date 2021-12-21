@@ -60,7 +60,7 @@ app.get("/children", authenticateToken, async (req, res) => {
     }
 })
 async function findAllChilds(client, username) {
-    const result = await client.db("Beobachtungsboegen").collection("children").find({"creator": username});
+    const result = await client.db("Beobachtungsboegen").collection("children").find({"creator": "laui"});
     if (result) {
         console.log("result:",result)
         return result;
