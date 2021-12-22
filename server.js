@@ -9,6 +9,7 @@ const jwt = require("jsonwebtoken")
 const port = process.env.PORT || 80
 
 const { MongoClient } = require('mongodb');
+const { ObjectId } = require('mongodb')
 const uri = "mongodb+srv://bbbacc:test@cluster0.nnb2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 app.use(cors())
@@ -41,8 +42,7 @@ app.get("/child/:id", authenticateToken, async (req, res) => {
     }
 })
 async function findOneChildById(client, idOfChild, username) {
-    const newId = new MongoClient.ObjectID(idOfChild)
-    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: newId, creator: username});
+    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: new ObjectId(idOfChild), creator: username});
     if (result) {
         console.log(`Found a listing in the collection with the id '${idOfChild}':`);
         return result;
