@@ -32,7 +32,7 @@ app.get("/child/:id", authenticateToken, async (req, res) => {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
         await client.connect()
-        const child = await findOneChildById(client, req.params.name, req.user.name)
+        const child = await findOneChildById(client, req.params.id, req.user.name)
         res.json(child)
     } catch (error) {
         console.log(error)
