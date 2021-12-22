@@ -30,8 +30,15 @@ const posts = [
 // Daten eines Kindes bekommen
 app.get("/child/:id", authenticateToken, async (req, res) => {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    const child = await findOneChildById(client, req.params.name, req.user.name)
-    res.json(child)
+    try {
+        await client.connect()
+        const child = await findOneChildById(client, req.params.name, req.user.name)
+        res.json(child)
+    } catch (error) {
+        console.log(error)
+    } finally {
+        await client.close()
+    }
 })
 async function findOneChildById(client, idOfChild, username) {
     const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: idOfChild, creator: username});
