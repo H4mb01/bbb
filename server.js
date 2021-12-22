@@ -41,7 +41,7 @@ app.get("/child/:id", authenticateToken, async (req, res) => {
     }
 })
 async function findOneChildById(client, idOfChild, username) {
-    const newId = new MongoClient.ObjectId(idOfChild)
+    const newId = new MongoClient.ObjectID(idOfChild)
     const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: newId, creator: username});
     if (result) {
         console.log(`Found a listing in the collection with the id '${idOfChild}':`);
