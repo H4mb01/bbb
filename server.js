@@ -28,18 +28,18 @@ const posts = [
 
 
 // Daten eines Kindes bekommen
-app.get("/child/:name", authenticateToken, async (req, res) => {
+app.get("/child/:id", authenticateToken, async (req, res) => {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    const child = await findOneChildByName(client, req.params.name, req.user.name)
+    const child = await findOneChildById(client, req.params.name, req.user.name)
     res.json(child)
 })
-async function findOneChildByName(client, nameOfChild, username) {
-    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ Vorname: nameOfChild, creator: username});
+async function findOneChildById(client, idOfChild, username) {
+    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: idOfChild, creator: username});
     if (result) {
-        console.log(`Found a listing in the collection with the name '${nameOfChild}':`);
+        console.log(`Found a listing in the collection with the id '${idOfChild}':`);
         return result;
     } else {
-        console.log(`No listings found with the name '${nameOfChild}'`);
+        console.log(`No listings found with the id '${idOfChild}'`);
     }
 }
 
