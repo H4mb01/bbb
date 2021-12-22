@@ -110,11 +110,31 @@ async function createChild(child) {
 
 
 // Beobachtung updaten 
-/*
-app.post("/observation", authenticateToken, async (req, res) => {
-
-}) 
-*/
+app.post("/observation/:id", authenticateToken, async (req, res) => {
+    const obs = req.body.observations
+    try {
+        await updateObservation(obs, req.params.id)
+        res.sendStatus(200)
+    } catch {
+        res.sendStatus(500)
+    }
+})
+async function updateObservation(observation, id){
+    const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true })
+    try {
+        await client.connect()
+        await updateListingById(client, id, {observations: observation})
+    } catch(e) {
+        console.log(e)
+    } finally {
+        await client.close()
+    }
+}
+async function updateListingById(client, id, updatedListing) {
+    const result = await client.db("sample_airbnb").collection("listingsAndReviews").updateOne({ _id: new ObjectId(id) }, { $set: updatedListing });
+    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+    console.log(`${result.modifiedCount} document(s) was/were updated.`);
+}
 
 
 
