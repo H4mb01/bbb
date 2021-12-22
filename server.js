@@ -41,7 +41,8 @@ app.get("/child/:id", authenticateToken, async (req, res) => {
     }
 })
 async function findOneChildById(client, idOfChild, username) {
-    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: idOfChild, creator: username});
+    const newId = new MongoClient.ObjectId(idOfChild)
+    const result = await client.db("Beobachtungsboegen").collection("children").findOne({ _id: newId, creator: username});
     if (result) {
         console.log(`Found a listing in the collection with the id '${idOfChild}':`);
         return result;
@@ -130,18 +131,10 @@ app.get("/auth", authenticateToken, (req, res) => {
     res.status(200).json({auth: true})
 })
 
-//Beispiel für Anfrage, bei der ein user nur das geschickt bekommt, 
-//wozu er Berechtigung hat
-app.get('/posts', authenticateToken, (req, res) => {
-    res.json(posts.filter(post => post.username === req.user.name))
-})
-
 //authentifizieren
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
-    console.log("headers:", req.headers)
-    console.log("authHeader:", authHeader, "token:", token)
     if (token == null) return res.sendStatus(401)
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
@@ -150,6 +143,12 @@ function authenticateToken(req, res, next) {
         next()
     })
 }
+
+//Beispiel für Anfrage, bei der ein user nur das geschickt bekommt, 
+//wozu er Berechtigung hat
+app.get('/posts', authenticateToken, (req, res) => {
+    res.json(posts.filter(post => post.username === req.user.name))
+})
 
 
 //Verbindung zur Datenbank
