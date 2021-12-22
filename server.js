@@ -76,7 +76,6 @@ async function findAllChilds(client, username) {
 }
 
 
-
 // neues Kind anlegen
 app.post("/create-child", authenticateToken, async (req, res) => {
     const child = {
