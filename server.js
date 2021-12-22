@@ -131,7 +131,7 @@ async function updateObservation(observation, id){
     }
 }
 async function updateListingById(client, id, updatedListing) {
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").updateOne({ _id: new ObjectId(id) }, { $set: updatedListing });
+    const result = await client.db("Beobachtungsboegen").collection("children").updateOne({ _id: new ObjectId(id) }, { $set: updatedListing });
     console.log(`${result.matchedCount} document(s) matched the query criteria.`);
     console.log(`${result.modifiedCount} document(s) was/were updated.`);
 }
